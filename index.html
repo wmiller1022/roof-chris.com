@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/15029/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roof-Chris.com | Storm Damage Expert | Louisville, KY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="./Roof-Chris.com _ Storm Damage Expert _ Louisville, KY_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --uk-blue: #0033A0;
+      --uk-blue-dark: #002080;
+      --uk-blue-light: #1a4bc4;
+      --white: #ffffff;
+      --grey-light: #f0f2f5;
+      --grey-mid: #b0b8c8;
+      --grey-dark: #4a5568;
+      --accent: #e8f0fe;
+      --red: #CC0000;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--white);
+      color: #1a202c;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO BANNER ──────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--uk-blue-dark) 0%, var(--uk-blue) 50%, var(--uk-blue-light) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 60px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* star field */
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .stars span {
+      position: absolute;
+      color: rgba(255,255,255,0.15);
+      font-size: 14px;
+      animation: twinkle 3s infinite alternate;
+    }
+    @keyframes twinkle { from { opacity: 0.1; } to { opacity: 0.5; } }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--grey-mid);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(52px, 10vw, 110px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 .accent {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.5);
+    }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 600;
+      color: var(--grey-mid);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--white);
+      color: var(--uk-blue);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 52px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--grey-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.4);
+      margin-left: 16px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-buttons { margin-bottom: 60px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+    /* Avatar in hero */
+    .hero-avatar {
+      width: clamp(200px, 30vw, 340px);
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+      animation: float 4s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollDown 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollDown { 0%,100% { transform: scaleY(1); opacity: 1; } 50% { transform: scaleY(0.5); opacity: 0.4; } }
+
+    /* ── HIGHLIGHTS ───────────────────────────────────────────── */
+    .highlights {
+      background: var(--grey-light);
+      padding: 80px 20px;
+    }
+
+    .section-label {
+      text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--uk-blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #1a202c;
+      line-height: 1;
+      margin-bottom: 60px;
+    }
+    .section-title span { color: var(--uk-blue); }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 32px 28px;
+      border-left: 5px solid var(--uk-blue);
+      box-shadow: 0 2px 20px rgba(0,0,51,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0,51,160,0.12);
+    }
+
+    .highlight-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--uk-blue);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+
+    .highlight-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+
+    .highlight-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+
+    .highlight-card p {
+      font-size: 15px;
+      color: var(--grey-dark);
+      line-height: 1.65;
+    }
+
+    .highlight-card p strong { color: var(--uk-blue); }
+
+    /* ── CAROUSEL ─────────────────────────────────────────────── */
+    .carousel-section {
+      background: var(--uk-blue-dark);
+      padding: 80px 0;
+    }
+
+    .carousel-section .section-label { color: var(--grey-mid); }
+    .carousel-section .section-title { color: var(--white); margin-bottom: 40px; }
+    .carousel-section .section-title span { color: var(--grey-mid); }
+
+    .carousel-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .carousel {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: clamp(280px, 50vw, 580px);
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-slide .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,20,80,0.85), transparent);
+      padding: 30px 24px 20px;
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .car-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .car-btn:hover { background: rgba(255,255,255,0.2); border-color: white; }
+
+    .car-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .car-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .car-dot.active { background: white; width: 24px; border-radius: 4px; }
+
+    .speed-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+    .speed-controls label {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .speed-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    .speed-btn:hover, .speed-btn.active { background: rgba(255,255,255,0.2); color: white; border-color: white; }
+
+    /* ── CONTACT ──────────────────────────────────────────────── */
+    .contact-section {
+      background: var(--white);
+      padding: 80px 20px;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .contact-info { }
+
+    .contact-chris {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .contact-chris-avatar {
+      width: 140px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 8px 20px rgba(0,51,160,0.2));
+    }
+
+    .contact-chris-text h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #1a202c;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .contact-chris-text h2 span { color: var(--uk-blue); }
+
+    .contact-chris-text .title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--grey-dark);
+      margin-bottom: 20px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #1a202c;
+      transition: color 0.2s;
+    }
+    .contact-item:hover { color: var(--uk-blue); }
+
+    .contact-item .icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-item .detail strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact-item .detail span {
+      font-size: 14px;
+      color: var(--grey-dark);
+    }
+
+    /* Form */
+    .contact-form-wrap {
+      background: var(--grey-light);
+      border-radius: 12px;
+      padding: 36px 32px;
+    }
+
+    .contact-form-wrap h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #1a202c;
+      margin-bottom: 24px;
+    }
+    .contact-form-wrap h3 span { color: var(--uk-blue); }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey-dark);
+      margin-bottom: 6px;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 15px;
+      font-family: 'Barlow', sans-serif;
+      background: white;
+      transition: border-color 0.2s;
+      color: #1a202c;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--uk-blue);
+    }
+
+    .form-group textarea { height: 100px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--uk-blue);
+      color: white;
+      border: none;
+      padding: 18px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--uk-blue-dark); transform: translateY(-1px); }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--grey-dark);
+      margin-top: 12px;
+    }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--uk-blue-dark), var(--uk-blue));
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★';
+      position: absolute;
+      top: 20px;
+      left: 0; right: 0;
+      text-align: center;
+      color: rgba(255,255,255,0.08);
+      font-size: 24px;
+      letter-spacing: 10px;
+    }
+
+    .cta-section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: white;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .cta-section h2 em {
+      font-style: normal;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.5);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: #0a0f1e;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 13px;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 1px;
+    }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    /* ── MOBILE ───────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .btn-outline { margin-left: 0; }
+      .contact-chris { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="stars" id="stars"><span style="left: 16.4696%; top: 51.6689%; font-size: 14.1221px; animation-delay: 0.597639s; animation-duration: 3.95034s;">★</span><span style="left: 57.1856%; top: 19.5933%; font-size: 19.6398px; animation-delay: 1.34561s; animation-duration: 4.67137s;">★</span><span style="left: 72.4453%; top: 22.0594%; font-size: 9.61485px; animation-delay: 1.38484s; animation-duration: 2.98381s;">★</span><span style="left: 76.2544%; top: 92.6163%; font-size: 10.7781px; animation-delay: 2.88733s; animation-duration: 4.87114s;">★</span><span style="left: 29.7773%; top: 41.0969%; font-size: 18.7816px; animation-delay: 0.488029s; animation-duration: 2.81261s;">★</span><span style="left: 25.2526%; top: 67.2234%; font-size: 15.224px; animation-delay: 2.05458s; animation-duration: 3.47219s;">★</span><span style="left: 62.3162%; top: 90.4061%; font-size: 23.9957px; animation-delay: 1.42903s; animation-duration: 2.63773s;">★</span><span style="left: 36.4559%; top: 73.143%; font-size: 20.5768px; animation-delay: 0.266862s; animation-duration: 3.85291s;">★</span><span style="left: 9.99117%; top: 65.923%; font-size: 19.2013px; animation-delay: 0.727619s; animation-duration: 3.90481s;">★</span><span style="left: 70.9186%; top: 77.9714%; font-size: 11.399px; animation-delay: 2.92665s; animation-duration: 2.16693s;">★</span><span style="left: 2.18997%; top: 57.3008%; font-size: 23.8951px; animation-delay: 0.160367s; animation-duration: 2.73519s;">★</span><span style="left: 73.5801%; top: 2.12452%; font-size: 12.04px; animation-delay: 2.57687s; animation-duration: 3.36499s;">★</span><span style="left: 24.8182%; top: 60.4684%; font-size: 13.9345px; animation-delay: 1.7841s; animation-duration: 3.94562s;">★</span><span style="left: 35.4364%; top: 28.2329%; font-size: 10.3467px; animation-delay: 0.735871s; animation-duration: 3.7849s;">★</span><span style="left: 16.7984%; top: 59.9962%; font-size: 12.0833px; animation-delay: 2.02448s; animation-duration: 3.01244s;">★</span><span style="left: 55.6926%; top: 15.0497%; font-size: 19.0848px; animation-delay: 2.18622s; animation-duration: 3.51517s;">★</span><span style="left: 36.5054%; top: 79.4239%; font-size: 19.5461px; animation-delay: 2.54574s; animation-duration: 4.0146s;">★</span><span style="left: 19.1179%; top: 97.5987%; font-size: 22.3893px; animation-delay: 0.928314s; animation-duration: 3.62391s;">★</span><span style="left: 71.5223%; top: 77.9707%; font-size: 18.6542px; animation-delay: 1.64703s; animation-duration: 2.15805s;">★</span><span style="left: 10.0986%; top: 78.3112%; font-size: 15.1813px; animation-delay: 1.06872s; animation-duration: 3.75985s;">★</span><span style="left: 20.9216%; top: 99.8201%; font-size: 9.02186px; animation-delay: 1.68919s; animation-duration: 4.77567s;">★</span><span style="left: 13.2579%; top: 67.7181%; font-size: 19.9509px; animation-delay: 2.72235s; animation-duration: 2.64435s;">★</span><span style="left: 17.8149%; top: 7.61595%; font-size: 21.7834px; animation-delay: 2.62993s; animation-duration: 3.00591s;">★</span><span style="left: 37.6672%; top: 59.4835%; font-size: 18.7502px; animation-delay: 2.45313s; animation-duration: 4.28779s;">★</span><span style="left: 38.959%; top: 20.7949%; font-size: 9.50791px; animation-delay: 1.96316s; animation-duration: 4.62839s;">★</span><span style="left: 74.9746%; top: 92.4161%; font-size: 17.3711px; animation-delay: 1.38606s; animation-duration: 3.36349s;">★</span><span style="left: 3.90299%; top: 59.6993%; font-size: 22.5511px; animation-delay: 0.291608s; animation-duration: 4.54607s;">★</span><span style="left: 53.318%; top: 53.3365%; font-size: 16.1404px; animation-delay: 0.0109513s; animation-duration: 4.84887s;">★</span><span style="left: 61.8052%; top: 88.8442%; font-size: 21.9746px; animation-delay: 0.697649s; animation-duration: 3.02068s;">★</span><span style="left: 42.4336%; top: 67.1485%; font-size: 9.75259px; animation-delay: 0.870042s; animation-duration: 4.43575s;">★</span></div>
+
+  <div class="hero-badge">★ Louisville's #1 Storm Damage Expert ★</div>
+
+  <h1>FREE<br><span class="accent">INSPECTION</span></h1>
+  <p class="hero-sub">No Cost · No Obligation · No Pressure</p>
+
+  <div class="hero-buttons">
+    <a href="file:///C:/Users/15029/Downloads/index.html#contact" class="btn-primary">📋 Book My Free Inspection</a>
+    <a href="file:///C:/Users/15029/Downloads/index.html#highlights" class="btn-outline">See My Results</a>
+  </div>
+
+  <img src="file:///C:/Users/15029/Downloads/RoofChris_avatar_transparent.png" alt="Roof Chris" class="hero-avatar">
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ── HIGHLIGHTS ─────────────────────────────────────────────── -->
+<section class="highlights" id="highlights">
+  <div class="section-label">★ Why Homeowners Trust Roof Chris</div>
+  <h2 class="section-title">The <span>Results</span> Speak</h2>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <div class="highlight-num">01</div>
+      <span class="highlight-icon">💰</span>
+      <h3>Millions Recovered</h3>
+      <p>Helped <strong>1,000s of Louisville homeowners</strong> recover <strong>millions of dollars</strong> in storm damage claims from insurance companies that tried to underpay or deny.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-num">02</div>
+      <span class="highlight-icon">🛡️</span>
+      <h3>All Major Carriers</h3>
+      <p>Approved and experienced working with <strong>State Farm, KY Farm Bureau, Liberty Mutual, Allstate, Safeco, USAA</strong> and more. No carrier is too big to deal with.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-num">03</div>
+      <span class="highlight-icon">📋</span>
+      <h3>Expert Insurance Process</h3>
+      <p>Full assistance from <strong>filing the claim</strong>, to meeting with the adjuster, all the way through to getting your <strong>funds fully released</strong>. I handle it all.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-num">04</div>
+      <span class="highlight-icon">🏠</span>
+      <h3>Product Knowledge Expert</h3>
+      <p>Over <strong>100,000 squares of Owens Corning shingles</strong> installed. When I recommend a product, it's because I've put it on hundreds of roofs across Louisville.</p>
+    </div>
+
+    <div class="highlight-card" style="grid-column: span 1;">
+      <div class="highlight-num">05</div>
+      <span class="highlight-icon">📍</span>
+      <h3>16 Years. Local.</h3>
+      <p><strong>16 years serving Louisville</strong> — especially the PRP and Dixie Highway corridor. I'm not a call center. I'm your neighbor, and I pick up the phone.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CAROUSEL ────────────────────────────────────────────────── -->
+<section class="carousel-section">
+  <div class="section-label">★ Drone Photography · Real Jobs · Real Results</div>
+  <h2 class="section-title">Work <span>On The Ground</span></h2>
+
+  <div class="carousel-wrap">
+    <div class="carousel">
+      <div class="carousel-track" id="track" style="transform: translateX(-200%);">
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone1_watermarked.jpg" alt="Roof replacement in progress">
+          <div class="caption">Roof Replacement — Louisville, KY</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone2_watermarked.jpg" alt="Aerial view of roofing crew">
+          <div class="caption">Full Crew In Action — Storm Restoration</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone3_watermarked.jpg" alt="Church roof replacement">
+          <div class="caption">Commercial Church Roof — Complete Tear-Off &amp; Replace</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone4_watermarked.jpg" alt="OSB deck replacement">
+          <div class="caption">OSB Deck Replacement — Full Structural Restoration</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone5_watermarked.jpg" alt="Roofing in progress">
+          <div class="caption">Residential Replacement — Mid-Install Progress</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone6_watermarked.jpg" alt="Completed roof">
+          <div class="caption">Insurance Claim Approval — Full Replacement Completed</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="file:///C:/Users/15029/Downloads/roof_chris_drone/drone7_watermarked.jpg" alt="Lakefront home roof">
+          <div class="caption">Lakefront Luxury Home — Owens Corning Premium Install</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="car-btn" id="prevBtn">←</button>
+      <div class="car-dots" id="dots"><div class="car-dot"></div><div class="car-dot"></div><div class="car-dot active"></div><div class="car-dot"></div><div class="car-dot"></div><div class="car-dot"></div><div class="car-dot"></div></div>
+      <button class="car-btn" id="nextBtn">→</button>
+    </div>
+
+    <div class="speed-controls">
+      <label>Speed:</label>
+      <button class="speed-btn active" data-speed="5000">Slow</button>
+      <button class="speed-btn" data-speed="3000">Normal</button>
+      <button class="speed-btn" data-speed="1500">Fast</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<section class="contact-section" id="contact">
+  <div class="section-label">★ Get In Touch</div>
+  <h2 class="section-title">Schedule <span>Roof Chris</span> Today</h2>
+
+  <div class="contact-inner">
+
+    <div class="contact-info">
+      <div class="contact-chris">
+        <img src="file:///C:/Users/15029/Downloads/RoofChris_avatar_transparent.png" alt="Roof Chris" class="contact-chris-avatar">
+        <div class="contact-chris-text">
+          <h2>Chris <span>"Roof-Chris"</span> Helton</h2>
+          <div class="title">Storm Damage Repair Expert</div>
+          <div class="contact-details">
+            <a href="tel:5027086945" class="contact-item">
+              <div class="icon">📞</div>
+              <div class="detail">
+                <strong>(502) 708-6945</strong>
+                <span>Call or Text Anytime</span>
+              </div>
+            </a>
+            <a href="mailto:Cahelton2022@gmail.com" class="contact-item">
+              <div class="icon">✉️</div>
+              <div class="detail">
+                <strong>Cahelton2022@gmail.com</strong>
+                <span>Email Chris Directly</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="icon">📍</div>
+              <div class="detail">
+                <strong>Louisville, KY</strong>
+                <span>PRP · Dixie Hwy · All Metro Area</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #e8f0fe; border-radius: 8px; padding: 20px 24px; border-left: 4px solid var(--uk-blue);">
+        <p style="font-family: &#39;Barlow Condensed&#39;, sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; color: var(--uk-blue); margin-bottom: 6px;">Free Inspections — Zero Obligation</p>
+        <p style="font-size: 14px; color: var(--grey-dark); line-height: 1.6;">I come out, get on your roof, document everything, and tell you exactly what you have. No charge, no pressure. If you've had a storm, you owe it to yourself to find out what your insurance should cover.</p>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Book Your <span>Free Inspection</span></h3>
+      <form id="contactForm" action="https://formspree.io/f/xqejvpdw" method="POST">
+        <!-- Route to both Chris and Wes -->
+        <input type="hidden" name="_cc" value="wmiller@roofwithveterans.com">
+        <input type="hidden" name="_subject" value="New Roof-Chris.com Inspection Request">
+
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" name="name" placeholder="Full Name" required="">
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" placeholder="(502) 000-0000" required="">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="your@email.com" required="">
+        </div>
+        <div class="form-group">
+          <label>Property Address *</label>
+          <input type="text" name="address" placeholder="Street Address, Louisville KY" required="">
+        </div>
+        <div class="form-group">
+          <label>Additional Info</label>
+          <textarea name="message" placeholder="Tell me about your roof, any recent storms, or anything else I should know..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">📋 Request My Free Inspection</button>
+        <p class="form-note">Sent directly to Chris · Response typically within 2 hours</p>
+        <div class="success-msg" id="successMsg">✅ Got it! Chris will be in touch within 2 hours.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <h2>Don't <em>Delay.</em><br>Schedule Roof Chris Today.</h2>
+  <p>Free inspections. Fast response. 16 years of getting homeowners paid what they deserve.</p>
+  <a href="file:///C:/Users/15029/Downloads/index.html#contact" class="btn-primary">📋 Book My Free Inspection Now</a>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2026 Roof-Chris.com · Chris Helton · Louisville, KY · <a href="tel:5027086945">(502) 708-6945</a></p>
+</footer>
+
+<!-- ── SCRIPTS ────────────────────────────────────────────────── -->
+<script>
+  // Star field
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 30; i++) {
+    const s = document.createElement('span');
+    s.textContent = '★';
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:${8+Math.random()*16}px;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;
+    starsEl.appendChild(s);
+  }
+
+  // Carousel
+  const track = document.getElementById('track');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dotsWrap = document.getElementById('dots');
+  let current = 0;
+  let speed = 5000;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'car-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n) {
+    current = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsWrap.querySelectorAll('.car-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), speed);
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); startAuto(); });
+  document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+  document.querySelectorAll('.speed-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      speed = parseInt(btn.dataset.speed);
+      startAuto();
+    });
+  });
+
+  startAuto();
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Form success feedback
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('successMsg').style.display = 'block';
+        btn.textContent = '✅ Sent!';
+      } else {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Try Again';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+
+
+</body></html>
